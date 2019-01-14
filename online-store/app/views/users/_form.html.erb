@@ -1,0 +1,9 @@
+<%= form_for(user) do |f| %>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %> <br> <br>
+    <%= f.label :password %> <br>
+    <%= f.password_field :password %> <br> <br>
+    <%= f.label :balance %> <br>
+    <%= f.number_field :balance, step: :any %>
+    <%= f.submit 'Submit' %>
+<% end %>
