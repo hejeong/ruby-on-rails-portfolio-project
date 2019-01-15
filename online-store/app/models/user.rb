@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
     # validations
     validates :balance, :numericality => {:greater_than_or_equal_to => 0}
-    validates_presence_of :username
-    validates_presence_of :password
-    validates_presence_of :name
+    validates_presence_of :username, allow_blank: false 
+    validates_presence_of :password, allow_blank: false 
+    validates_presence_of :name, allow_blank: false 
 end
