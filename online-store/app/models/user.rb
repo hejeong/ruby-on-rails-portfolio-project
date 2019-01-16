@@ -10,4 +10,6 @@ class User < ApplicationRecord
     validates_presence_of :username, allow_blank: false 
     validates_presence_of :password, allow_blank: false 
     validates_presence_of :name, allow_blank: false 
+
+    
 end
