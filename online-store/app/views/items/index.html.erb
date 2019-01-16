@@ -3,4 +3,7 @@
       <%= link_to item.title, item_path(item) %> <br>
     <% end %>
 </ul>
+<% if admin? %>
+  <%= link_to 'Create Item Listing', new_item_path, class: "link back" %>
+<% end %>
 <%= link_to 'Back', root_path, class: "link back" %>

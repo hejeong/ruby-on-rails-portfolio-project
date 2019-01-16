@@ -1,11 +1,11 @@
 <h1><%= @item.title %></h1>
 <h3><%= @item.description %></h3>
 <p>$ <%= @item.cost %></p>
+<%= link_to 'Back', items_path, class: "link back" %>   
 <% if admin? %>
     <%= link_to 'Edit this item', edit_item_path(@item), class: :edit %> 
 <% else %>
     <%= form_for(@transaction, url: item_purchase_path(@item)) do |f| %>
-        <%= link_to 'Back', items_path, class: "link back" %>   
         <%= f.submit 'Purchase', class: :button %>
     <% end %>
 <% end %>

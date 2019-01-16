@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   resources :users, only: [:create, :show]
-  resources :items, only: [:new, :create, :index, :edit, :update]
+  resources :items, only: [:new, :create, :index, :edit, :update, :destroy]
   resources :items, only: [:show] do 
     post '/purchase' => 'transactions#create'
   end
