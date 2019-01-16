@@ -13,6 +13,17 @@
     background-color: #4CAF50; /* Green */
 }
 
+.edit {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(235, 173, 29);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    padding: 4px 10px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
 .link{
     font-family: 'Raleway', sans-serif;
     background-color: rgb(196, 200, 196);

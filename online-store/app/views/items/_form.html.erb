@@ -1,9 +1,16 @@
 <%= form_for(item) do |f| %>
     <%= f.label :title %> <br>
     <%= f.text_field :title %> <br> <br>
+
     <%= f.label :description %> <br>
     <%= f.text_field :description %> <br> <br>
+
     <%= f.label :cost %> <br>
     <%= f.number_field :cost, step: :any %> <br> <br>
-    <%= f.submit 'Create New Listing', class: :button %>
+
+    <% if admin? %>
+        <%= f.submit 'Update Listing', class: :button %>
+    <% else %>
+        <%= f.submit 'Create New Listing', class: :button %>
+    <% end %>
 <% end %>

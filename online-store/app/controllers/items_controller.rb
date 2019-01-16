@@ -8,6 +8,14 @@ class ItemsController < ApplicationController
         redirect_to item_path(@item)
     end
 
+    def edit
+        @item = Item.find(params[:id])
+    end 
+
+    def update
+        
+    end
+
     def index
         @items = Item.all
     end
