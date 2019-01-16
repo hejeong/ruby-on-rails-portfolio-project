@@ -2,3 +2,7 @@
 <h3><%= @item.description %></h3>
 <p>$ <%= @item.cost %></p>
 
+<%= form_for(@transaction, url: item_purchase_path(@item)) do |f| %>
+    <%= link_to 'Back', items_path, class: "link back" %>   
+    <%= f.submit 'Purchase', class: :button %>
+<% end %>

@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
     def show
         @item = Item.find(params[:id])
+        @transaction = Transaction.new
     end
 
     def destroy
