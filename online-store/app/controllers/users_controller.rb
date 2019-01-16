@@ -4,7 +4,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        user = User.create(user_params)
+        return redirect_to signup_path unless user.valid?
+        @user = user
         redirect_to user_path(@user)
     end
 

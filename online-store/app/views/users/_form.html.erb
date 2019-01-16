@@ -7,5 +7,6 @@
     <%= f.password_field :password %> <br> <br>
     <%= f.label :balance %> <br>
     <%= f.number_field :balance, step: :any %>
+    <%= link_to 'Back', root_path, class: "link back" %>
     <%= f.submit 'Submit', class: :button %>
 <% end %>

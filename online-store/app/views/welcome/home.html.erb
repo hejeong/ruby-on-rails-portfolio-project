@@ -1,6 +1,7 @@
 <% if current_user %>
     <h1>Welcome, <%= current_user.name %>!</h1>   
-    <%= link_to 'Logout', logout_path, method: :post %>
+    <%= link_to 'Items', items_path, class: :link %>
+    <%= link_to 'Logout', logout_path, method: :post%>
 <% else %>
     <h1>Welcome!</h1>
     <%= link_to 'Sign Up', signup_path %> Or <%= link_to 'Log in', login_path %>

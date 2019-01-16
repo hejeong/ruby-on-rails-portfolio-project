@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     def create
         login_info = params[:user]
-        return redirect_to signin_path if !login_info[:username] || login_info[:username].empty? || !login_info[:password]
+        return redirect_to login_path if !login_info[:username] || login_info[:username].empty? || !login_info[:password]
         user = User.find_by(username: login_info[:username])
         user = user.try(:authenticate, login_info[:password])
         return redirect_to signin_path unless user
