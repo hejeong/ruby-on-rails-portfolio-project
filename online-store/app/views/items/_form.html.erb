@@ -8,6 +8,9 @@
     <%= f.label :cost %> <br>
     <%= f.number_field :cost, step: :any %> <br> <br>
     
+    <%= f.label :stock %> <br>
+    <%= f.number_field :stock, step: 1 %> <br> <br>
+
     <% if params[:id] %>
         <%= link_to 'Back', item_path(item), class: "link back" %>
         <%= f.submit 'Update Listing', class: :button %>
