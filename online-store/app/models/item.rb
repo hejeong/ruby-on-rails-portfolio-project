@@ -5,5 +5,6 @@ class Item < ApplicationRecord
 
     validates_presence_of :title, allow_blank: false 
     validates_presence_of :cost, allow_blank: false
+    validates_presence_of :stock, allow_blank: false
     validates :cost, :numericality => {:greater_than => 0}
 end
