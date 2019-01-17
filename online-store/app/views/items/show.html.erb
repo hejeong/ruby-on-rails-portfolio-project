@@ -6,6 +6,8 @@
     <%= link_to 'Edit this item', edit_item_path(@item), class: :edit %> 
 <% else %>
     <%= form_for(@transaction, url: item_purchase_path(@item)) do |f| %>
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity %>
         <%= f.submit 'Purchase', class: :button %>
     <% end %>
 <% end %>
