@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
 
     def valid_transaction?
         item = Item.find_by(id: params[:item_id])
-        quantity = params[:transaction][:quantity]
+        quantity = Integer(params[:transaction][:quantity])
         total_price = quantity * item.cost
         user = current_user
         if  quantity <= item.stock && user.balance >= total_price
