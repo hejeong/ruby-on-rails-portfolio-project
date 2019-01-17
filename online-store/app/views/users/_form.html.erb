@@ -1,12 +1,12 @@
 <%= form_for(user) do |f| %>
     <%= f.label :name %> <br>
-    <%= f.text_field :name %> <br> <br>
+    <%= f.text_field :name, class: :input %> <br> <br>
     <%= f.label :username %> <br>
-    <%= f.text_field :username %> <br> <br>
+    <%= f.text_field :username, class: :input %> <br> <br>
     <%= f.label :password %> <br>
-    <%= f.password_field :password %> <br> <br>
+    <%= f.password_field :password, class: :input %> <br> <br>
     <%= f.label :balance %> <br>
-    <%= f.number_field :balance, step: :any %>
+    <%= f.number_field :balance, step: :any, class: :input %>
     <%= link_to 'Back', root_path, class: "link back" %>
     <%= f.submit 'Submit', class: :button %>
 <% end %>

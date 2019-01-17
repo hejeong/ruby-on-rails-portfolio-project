@@ -1,4 +1,12 @@
+* {
+    box-sizing: border-box;
+  }
 
+body {
+    background-image: url('homepage.jpg');
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
 .button {
     font-family: 'Raleway', sans-serif;
     background-color: green;
@@ -12,7 +20,21 @@
 .button:hover {
     background-color: #4CAF50; /* Green */
 }
+.container {
+  border-radius: 5px;
+  background-color:rgba(0, 0, 0, 0.5);
+  width: 66%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 30px;
+  color: white;
+}
 
+.col-66{
+    float: left;
+    width: 66%;
+    margin-top: 6px;
+}
 .edit {
     font-family: 'Raleway', sans-serif;
     background-color: rgb(235, 173, 29);
@@ -23,7 +45,16 @@
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
-
+h1 {
+    margin: 0;
+}
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
 .link{
     font-family: 'Raleway', sans-serif;
     background-color: rgb(196, 200, 196);
@@ -39,3 +70,32 @@
     background-color: snow;
 }
 
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+  }
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+ }
+
+ .overlay {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.3); /*can be anything, of course*/
+}
+  
