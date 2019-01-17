@@ -3,6 +3,12 @@
   }
 a {
     text-decoration: none;
+    color: silver;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+a:hover {
+    color: white;
 }
 body {
     background-image: url('homepage.jpg');
