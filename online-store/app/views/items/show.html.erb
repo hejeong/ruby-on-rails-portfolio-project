@@ -8,7 +8,7 @@
 <% else %>
     <%= form_for(@transaction, url: item_purchase_path(@item)) do |f| %>
         <%= f.label :quantity %>
-        <%= f.number_field :quantity %>
+        <%= f.number_field :quantity, value: 1 %>
         <%= f.submit 'Purchase', class: :button %>
     <% end %>
 <% end %>
