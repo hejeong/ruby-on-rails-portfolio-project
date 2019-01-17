@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
   }
-
+a {
+    text-decoration: none;
+}
 body {
     background-image: url('homepage.jpg');
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -9,6 +11,7 @@ body {
 }
 .button {
     font-family: 'Raleway', sans-serif;
+    text-decoration: none;
     background-color: green;
     color: white;
     border-radius: 6px;
@@ -30,9 +33,9 @@ body {
   color: white;
 }
 
-.col-66{
+.col-33{
     float: left;
-    width: 66%;
+    width: 33%;
     margin-top: 6px;
 }
 .edit {
@@ -47,6 +50,7 @@ body {
 }
 h1 {
     margin: 0;
+    font-family: 'Thasadith', sans-serif;
 }
 .input {
     width: 100%;
