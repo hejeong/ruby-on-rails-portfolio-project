@@ -13,12 +13,16 @@ class TransactionsController < ApplicationController
         quantity = Integer(params[:transaction][:quantity])
         total_price = quantity * item.cost
         user = current_user
-        if  quantity <= item.stock && user.balance >= total_price
-            item.stock -= quantity
-            user.balance -= total_price
-            item.save 
-            user.save
+        if  quantity <= item.stock
+            if user.balance >= total_price
+                item.stock -= quantity
+                user.balance -= total_price
+                item.save 
+                user.save
+            end
+            flash[:error] = "Insufficient funds. Try again later."
         else
+            flash[:error] = "Not enough stock. Please try a smaller amount."
             nil
         end
     end

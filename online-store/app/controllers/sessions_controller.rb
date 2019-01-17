@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     end
 
     def create
+        # sign in by third party service -- Facebook
         if auth
             user = User.find_by(uid: auth['uid']) 
             if !user 
@@ -15,19 +16,30 @@ class SessionsController < ApplicationController
                 user.save
             end
         else 
+            # sign in with username and password
             login_info = params[:user]
-            return redirect_to login_path if !login_info[:username] || login_info[:username].empty? || !login_info[:password]
+            if !login_info[:username] || login_info[:username].empty? || !login_info[:password]
+                flash[:error] = "Username and password cannot be blank. Please try again."
+                return redirect_to login_path 
+            end
             user = User.find_by(username: login_info[:username])
             user = user.try(:authenticate, login_info[:password])
-            return redirect_to signin_path unless user
+            # throw error if incorrect credentials
+            if !user
+                flash[:error] = "Incorrect username or password. Please try again."
+                return redirect_to signin_path
+            end
         end
+        flash[:success] = "Successfully logged in!"
         session[:user_id] = user.id
         @user = user
         redirect_to root_path
     end
 
     def destroy
+        # log out
         session.delete :user_id
+        flash[:success] = "Successfully logged out."
         redirect_to root_path
     end
 
