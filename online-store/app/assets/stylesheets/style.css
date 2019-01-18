@@ -1,4 +1,6 @@
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 a {
@@ -29,20 +31,48 @@ body {
 .button:hover {
     background-color: #4CAF50; /* Green */
 }
-.container {
+.wrapper {
   border-radius: 5px;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color:rgba(0, 0, 0, 0.8);
   width: 66%;
   padding: 20px;
   margin: auto;
   margin-top: 30px;
   color: white;
 }
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+  }  
 
 .col-33{
     float: left;
     width: 33%;
-    margin-top: 6px;
+    margin: 6px 0px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.image{
+    position: relative;
+    float: left;
+    width:  100%;
+    height: auto;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    opacity: 0.7;
+}
+.item-index img{
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.item-index:hover img{
+    opacity: 1;
 }
 .edit {
     font-family: 'Raleway', sans-serif;
@@ -57,6 +87,7 @@ body {
 h1 {
     margin: 0;
     font-family: 'Thasadith', sans-serif;
+    padding-bottom: 6px;
 }
 .input {
     width: 100%;
@@ -109,3 +140,15 @@ li a {
     background: rgba(0, 0, 0, 0.3); /*can be anything, of course*/
 }
   
+
+@media only screen and (max-width: 1108px) {
+    .wrapper {
+        width: 90%;
+      }
+   
+  }
+  @media only screen and (max-width: 750px) {
+    .wrapper {
+        width: 90%;
+      }
+  }

@@ -1,11 +1,15 @@
-<ul>
-    <% @items.each do |item| %>
-    <div class = "col-33">
-      <%= link_to item.title, item_path(item) %>
-    </div>
-    <% end %>
-</ul>
+<%= link_to 'Back', root_path, class: "link back" %>
 <% if admin? %>
   <%= link_to 'Create Item Listing', new_item_path, class: "button" %>
 <% end %>
-<%= link_to 'Back', root_path, class: "link back" %>
+
+
+<ul>
+    <% @items.each do |item| %>
+    <div class = "col-33">
+      <div class="item-index">
+          <a href=<%= item_path(item)%>> <%= image_tag item.image_url, class: :image %><%= item.title %></a>
+      </div>
+    </div>
+    <% end %>
+</ul>
