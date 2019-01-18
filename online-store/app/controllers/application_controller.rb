@@ -31,6 +31,13 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def admin_only
+        if !admin?
+            flash[:error] = "Only admins can access that page."
+            redirect_to items_path
+        end
+    end
+
     def feature
         Item.find_by(id: Transaction.most_popular.first.item_id)
     end

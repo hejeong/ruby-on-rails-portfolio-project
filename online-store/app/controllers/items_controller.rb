@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    before_action :admin_only, except: [:index, :show]
     def new 
         @item = Item.new
     end

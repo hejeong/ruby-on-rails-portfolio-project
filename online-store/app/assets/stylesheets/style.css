@@ -12,6 +12,9 @@ a {
 a:hover {
     color: white;
 }
+.alert {
+    padding: 5px;
+}
 body {
     background-image: url('homepage.jpg');
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -60,6 +63,7 @@ body {
     width: 30%;
     height: 30%;
 }
+
 .image{
     position: relative;
     float: left;
@@ -110,6 +114,10 @@ h1 {
     transition-duration: 0.4s;
 }
 
+.delete {
+    background-color: red;
+    color: white;
+}
 .link:hover{
     background-color: snow;
 }
