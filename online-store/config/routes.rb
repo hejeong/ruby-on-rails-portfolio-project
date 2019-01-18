@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create, :index, :edit, :update, :destroy]
   resources :items, only: [:show] do 
     post '/purchase' => 'transactions#create'
+    resources :comments, only: [:new, :index, :show]
   end
 end
