@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :admin?
+    helper_method :feature
     
     def current_user 
         if logged_in?
@@ -11,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        session[:user_id] != nil
+        redirect_to signin_path unless session[:user_id]
     end
 
     def admin?
@@ -20,5 +21,9 @@ class ApplicationController < ActionController::Base
         else 
             nil
         end
+    end
+
+    def feature
+        Item.find_by(id: Transaction.most_popular.first.item_id)
     end
 end

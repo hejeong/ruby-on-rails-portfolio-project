@@ -56,7 +56,10 @@ body {
     padding-right: 50px;
     text-align: center;
 }
-
+.feature {
+    width: 30%;
+    height: 30%;
+}
 .image{
     position: relative;
     float: left;

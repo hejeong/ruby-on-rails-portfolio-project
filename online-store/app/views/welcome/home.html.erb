@@ -7,3 +7,7 @@
     <%= link_to 'Sign Up', signup_path, class: 'link back' %> Or <%= link_to 'Log in', login_path, class: :button %>
     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
 <% end %>
+<br><br><br>
+<h3>Today's popular item: </h3>
+<h4><%= feature.title %>  -- Price: $<%= feature.cost %></h4>
+<a href=<%= item_path(feature)%>> <%= image_tag feature.image_url, class: :feature %></a>
