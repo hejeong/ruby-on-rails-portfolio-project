@@ -12,8 +12,16 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        redirect_to signin_path unless session[:user_id]
+        if session[:user_id] != nil
+            true
+        else
+            nil
+        end
     end
+
+    def require_log_in
+        redirect_to login_path unless logged_in?
+    end 
 
     def admin?
         if current_user

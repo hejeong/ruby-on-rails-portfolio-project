@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+    before_action :require_log_in, only: :create
     def create
         if valid_transaction?
             transaction = Transaction.create(user_id: current_user.id, item_id: params[:item_id], quantity: params[:transaction][:quantity])
