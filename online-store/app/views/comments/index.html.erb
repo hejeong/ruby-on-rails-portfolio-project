@@ -1,0 +1,7 @@
+<h1>Comments for <%= @item.title %></h1>
+<%= link_to 'Back', item_path(@item), class: "link back" %>
+<ul>
+    <% @comments.each do |comment| %>
+    <li><a href= <%= item_comment_path(comment.item_id,comment.id) %>><%= comment.content %></a></li>   
+    <% end %>
+</ul>

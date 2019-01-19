@@ -1,4 +1,4 @@
-<%= form_for comment, item_comments_path, method: :post do |f| %>
+<%= form_for comment, url: item_comments_path(params[:item_id]), method: :post do |f| %>
     <%= f.label :content %> <br>
     <%= f.text_field :content, class: :input %> <br> <br>
     <%= link_to 'Back', item_path(params[:item_id]), class: "link back" %>
