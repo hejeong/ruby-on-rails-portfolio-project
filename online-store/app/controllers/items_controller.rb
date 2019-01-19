@@ -5,8 +5,13 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.create(item_params)
-        redirect_to item_path(@item)
+        @item = Item.new(item_params)
+        if @item.valid?
+            @item.save
+            redirect_to item_path(@item)
+        else
+            render 'items/new'
+        end
     end
 
     def edit

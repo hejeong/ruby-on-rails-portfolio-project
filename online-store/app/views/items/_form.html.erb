@@ -1,20 +1,39 @@
 <%= form_for(item) do |f| %>
+<% if item.errors.any? %>
+<div id="error_explanation">
+    <h2>There was an error: </h2>
+    <ul>
+      <% item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field <%= ' field_with_errors' if item.errors[:title].any? %>">
     <%= f.label :title %> <br>
-    <%= f.text_field :title, class: :input %> <br> <br>
-
+    <%= f.text_field :title, class: :input %> 
+</div>
+<br><br>
+<div class="field <%= ' field_with_errors' if item.errors[:description].any? %>">
     <%= f.label :description %> <br>
-    <%= f.text_field :description, class: :input %> <br> <br>
-
+    <%= f.text_field :description, class: :input %> 
+</div>
+<br><br>
+<div class="field <%= ' field_with_errors' if item.errors[:cost].any? %>">
     <%= f.label :cost %> <br>
-    <%= f.number_field :cost, step: :any, class: :input %> <br> <br>
-    
+    <%= f.number_field :cost, step: :any, class: :input %> 
+</div>
+<br><br>
+<div class="field <%= ' field_with_errors' if item.errors[:stock].any? %>">
     <%= f.label :stock %> <br>
-    <%= f.number_field :stock, step: 1, class: :input %> <br> <br>
-
+    <%= f.number_field :stock, step: 1, class: :input %> 
+</div>
+<br><br>
     <%= f.label :image_url %> <br>
     <%= f.text_field :image_url, class: :input %> <br> <br>
    
-    <% if params[:id] %>
+    <% if params[:id] %> 
         <%= link_to 'Back', item_path(item), class: "link back" %>
         <%= f.submit 'Update Listing', class: :button %>
         <%= link_to 'Delete Listing', item_path(item), method: :delete, class: "link back" %>
