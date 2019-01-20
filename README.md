@@ -1,5 +1,5 @@
 # Ruby on Rails - Online Store
-
+An online store template built using Ruby on Rails. Basic functions include: log in, sign up, logout, authentication from third party service, admin controls, purchasing options, class-level scope methods, Activerecord models with validations and more.
 ## Installation
 run `bundle install`
 
