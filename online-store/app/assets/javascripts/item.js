@@ -31,7 +31,18 @@ const bindClick = ()=>{
     })
     $("#item-show").on('click', function(event){
         event.preventDefault();
-        getItemShow();
+        const id = event.target.getAttribute("data-id");
+        getItemShow(id);
+    })
+    $("#new_item").on('submit', function(event){
+        event.preventDefault();
+        const values = $(this).serialize();
+        $.post('/items', values)
+        .done(function(data){
+            $(".wrapper").html("");
+            const newHTML = getItemShow(data.id);
+            $(".wrapper").append(newHTML);
+        })
     })
 }
 
@@ -39,30 +50,30 @@ const getItems = ()=> {
     fetch(`/items.json`)
     .then(res => res.json())
     .then(items => {
-        $("#items-list").html("");
+        $(".wrapper").html("");
         items.forEach(item => {
             const newItem = new Item(item);
             const newHtml = newItem.formatIndex();
-            $("#items-list").append(newHtml);
+            $(".wrapper").append(newHtml);
          
         })
     })
 }
 
 const getItemShow = (id)=>{
-    fetch(`/items/1.json`)
+    fetch(`/items/${id}.json`)
     .then(res => res.json())
     .then(item => {
-        $("#item-show").html("");
+        $("#.wrapper").html("");
         const target = new Item(item);
         const targetHTML = target.formatShow();
-        $("#item-show").append(targetHTML);
+        $(".wrapper").append(targetHTML);
     })
 };
 Item.prototype.formatShow = function(){
-    const showHTML = `<h1>${this.title}</h1>
+    const showHTML = `<img class="show-image" src="${this.imageURL}" alt="No available image"></img><h1>${this.title}</h1>
     <h3>${this.description}</h3>
-    <p>$${this.cost}</p>
+    <p>Price: $${this.cost}</p>
     <p>Left in stock: ${this.stock}</p>`;
     return showHTML;
 }

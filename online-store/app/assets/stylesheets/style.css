@@ -16,7 +16,7 @@ a:hover {
     padding: 5px;
 }
 body {
-    background-image: url('homepage.jpg');
+    background-image: url('furniture-background.jpg');
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 }
@@ -36,7 +36,7 @@ body {
 }
 .wrapper {
   border-radius: 5px;
-  background-color:rgba(0, 0, 0, 0.8);
+  background: rgba(9, 21, 44, 0.644);
   width: 66%;
   padding: 20px;
   margin: auto;
@@ -75,6 +75,9 @@ body {
     opacity: 0.7;
 }
 .item-index img{
+    max-height: 255px;
+    width: 350px;
+    overflow: none;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
@@ -159,7 +162,17 @@ li a {
   #items-list-btn {
       cursor: pointer;
   }
-  
+
+  #item-show{
+      align-content: center;
+      padding-left: 60px;
+  }
+
+  .show-image{
+      height: 720px;
+      width: 1080px;
+  }
+
 @media only screen and (max-width: 1108px) {
     .wrapper {
         width: 90%;
