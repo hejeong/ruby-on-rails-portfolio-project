@@ -1,7 +1,6 @@
-<h1><%= @item.title %></h1>
-<h3><%= @item.description %></h3>
-<p>$ <%= @item.cost %></p>
-<p>Left in stock: <%= @item.stock %></p> 
+<div id="item-show">
+Click Me
+</div>
 <% if admin? %>
 <%= link_to 'Back', items_path, class: "link back" %>   
     <%= link_to 'Edit this item', edit_item_path(@item), class: :edit %> 

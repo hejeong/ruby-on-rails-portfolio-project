@@ -155,6 +155,10 @@ li a {
 
     border-color: red;
   }
+
+  #items-list-btn {
+      cursor: pointer;
+  }
   
 @media only screen and (max-width: 1108px) {
     .wrapper {

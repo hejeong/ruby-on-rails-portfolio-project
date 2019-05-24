@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
             # throw error if incorrect credentials
             if !user
                 flash[:error] = "Incorrect username or password. Please try again."
-                return redirect_to signin_path
+                return redirect_to login_path
             end
         end
         flash[:success] = "Successfully logged in!"

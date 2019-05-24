@@ -3,13 +3,8 @@
   <%= link_to 'Create Item Listing', new_item_path, class: "button" %>
 <% end %>
 
-
-<ul>
-    <% @items.each do |item| %>
-    <div class = "col-33">
-      <div class="item-index">
-          <a href=<%= item_path(item)%>> <%= image_tag item.image_url, class: :image %><%= item.title %></a>
-      </div>
-    </div>
-    <% end %>
+<button class="hi">yo</button>
+<h3 id="items-list-btn">View Items</h3>
+<ul id="items-list">
+   
 </ul>
