@@ -15,7 +15,7 @@ Item.prototype.formatIndex = function(){
     let itemHTML = `
     <div class = "col-33">
         <div class="item-index">
-            <a href="/items/${this.id}"> <img src="${this.imageURL}" class="image">${this.title}</a>
+            <a href="/items/${this.id}"> <img src="${this.imageURL}" class="image" data-id="${this.id}">${this.title}</a>
         </div>
     </div>
   `;
@@ -25,16 +25,16 @@ Item.prototype.formatIndex = function(){
 
 
 const bindClick = ()=>{
-    $("#items-list-btn").on('click', function(event){
+    $(document).on('click', ".shop-link", function(event){
         event.preventDefault();
         getItems();
     })
-    $("#item-show").on('click', function(event){
+    $(document).on('click', ".item-index", function(event){
         event.preventDefault();
         const id = event.target.getAttribute("data-id");
         getItemShow(id);
     })
-    $("#new_item").on('submit', function(event){
+    $(document).on('submit', "#new_item", function(event){
         event.preventDefault();
         const values = $(this).serialize();
         $.post('/items', values)
@@ -64,7 +64,7 @@ const getItemShow = (id)=>{
     fetch(`/items/${id}.json`)
     .then(res => res.json())
     .then(item => {
-        $("#.wrapper").html("");
+        $(".wrapper").html("");
         const target = new Item(item);
         const targetHTML = target.formatShow();
         $(".wrapper").append(targetHTML);

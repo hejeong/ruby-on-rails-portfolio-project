@@ -1,6 +1,5 @@
 <% if current_user %>
     <h1 data-id="<%= current_user.id %>">Welcome, <%= current_user.name %>!</h1>   
-    <%= link_to 'Items', items_path, class: :link %>
     <%= link_to 'Logout', logout_path, method: :post%>
 <% else %>
     <h1>Welcome!</h1>

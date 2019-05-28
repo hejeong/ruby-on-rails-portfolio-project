@@ -73,6 +73,7 @@ body {
     background-repeat:   no-repeat;
     background-size:     cover;
     opacity: 0.7;
+    z-index: 0;
 }
 .item-index img{
     max-height: 255px;
@@ -80,6 +81,7 @@ body {
     overflow: none;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    z-index: 1;
 }
 .item-index:hover img{
     opacity: 1;
