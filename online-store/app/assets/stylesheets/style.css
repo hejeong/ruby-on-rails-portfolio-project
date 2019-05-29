@@ -133,8 +133,9 @@ h1 {
     font-family: 'Thasadith', sans-serif;
     padding-bottom: 6px;
 }
-.profile {
+.profile>a {
     float: right;
+    color: rgb(113, 194, 231);
 }
 .input {
     width: 100%;
@@ -179,7 +180,13 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
  }
+.alert-error {
+    color: rgb(250, 132, 132);
+}
 
+.alert-success{
+    color: rgb(117, 212, 117);
+}
  .overlay {
     z-index: 1;
     height: 100%;

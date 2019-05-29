@@ -21,6 +21,7 @@ class TransactionsController < ApplicationController
                 user.balance -= total_price
                 item.save 
                 user.save
+                flash[:success] = "Transaction complete."
             else 
                 flash[:error] = "Insufficient funds. Try again later."
             end
