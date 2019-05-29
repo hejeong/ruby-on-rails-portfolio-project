@@ -2,3 +2,12 @@
 <% if admin? %>
   <%= link_to 'Create Item Listing', new_item_path, class: "button" %>
 <% end %>
+<br>
+
+  <% @items.each do |item| %>
+  <div class = "col-33">
+    <div class="item-index">
+        <a href=<%= item_path(item)%>> <%= image_tag item.image_url, class: :image, "data-id": item.id %><%= item.title %></a>
+    </div>
+  </div>
+  <% end %>

@@ -44,21 +44,28 @@ const bindClick = ()=>{
             $(".wrapper").append(newHTML);
         })
     })
-}
+};
 
 const getItems = ()=> {
     fetch(`/items.json`)
     .then(res => res.json())
     .then(items => {
         $(".wrapper").html("");
+        let newHtml = `<a class="link back" href="/">Back</a>`
+        if($(".profile a").text() == "admin"){
+            newHtml += `<a class="button" href="/items/new">Create Item Listing</a><br>`
+        }else{
+            newHtml += `<br>`
+        }
+        $(".wrapper").append(newHtml);
         items.forEach(item => {
             const newItem = new Item(item);
-            const newHtml = newItem.formatIndex();
+            newHtml = newItem.formatIndex();
             $(".wrapper").append(newHtml);
          
         })
     })
-}
+};
 
 const getItemShow = (id)=>{
     fetch(`/items/${id}.json`)
@@ -71,9 +78,23 @@ const getItemShow = (id)=>{
     })
 };
 Item.prototype.formatShow = function(){
-    const showHTML = `<img class="show-image" src="${this.imageURL}" alt="No available image"></img><h1>${this.title}</h1>
-    <h3>${this.description}</h3>
-    <p>Price: $${this.cost}</p>
-    <p>Left in stock: ${this.stock}</p>`;
+    let showHTML = `<img class="show-image" src="${this.imageURL}" alt="No available image"></img><h1>${this.title}</h1>
+                    <h3>${this.description}</h3>
+                    <p>Price: $${this.cost}</p>
+                    <p>Left in stock: ${this.stock}</p>`
+    if($(".profile a").text() != "admin"){
+        showHTML += `<form class="new_transaction" id="new_transaction" action="/items/17/purchase" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="pFPpL4rvXm2xiJDVcZ9ibJb0gkA4pTStPm9FitW83UGLWZTiGQli2BAcfsxpvRA1e7xlrqLlBHnHUjwzreZy/g==">
+        <label for="transaction_quantity">Quantity</label>
+        <input value="1" type="number" name="transaction[quantity]" id="transaction_quantity">
+        <a class="link back" href="/items">Back</a>  
+        <input type="submit" name="commit" value="Purchase" class="button" data-disable-with="Purchase">
+        </form><br><br>
+        <a href="/items/${this.id}/comments/new">Create a comment</a> |
+        <a href="/items/${this.id}/comments">View comments</a>`
+    }else {
+        showHTML += `<a class="link back" href="/items">Back</a>
+        <a class="edit" href="/items/${this.id}/edit">Edit this item</a>
+        <a class="link delete" rel="nofollow" data-method="delete" href="/items/${this.id}">Delete this item</a>`
+    }
     return showHTML;
-}
+};

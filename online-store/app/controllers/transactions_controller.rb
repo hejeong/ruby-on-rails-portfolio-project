@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
     before_action :require_log_in, only: :create
+    skip_before_action :verify_authenticity_token
     def create
         if valid_transaction?
             transaction = Transaction.create(user_id: current_user.id, item_id: params[:item_id], quantity: params[:transaction][:quantity])
