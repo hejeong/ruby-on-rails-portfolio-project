@@ -13,4 +13,4 @@ Item.create({title: "AmazonBasics XLR Male to Female Microphone Cable - 6 Feet" 
 Item.create({title: "Roundhill Furniture AC151GY Tuchico Contemporary Fabric Accent Chair, Gray" , description: "Deep tuck-pleating design and extra thick padding is supremely comfortable.", cost: 84.38, stock: 53, image_url: "https://images-na.ssl-images-amazon.com/images/I/A1RuRxFXReL._SL1500_.jpg"})
 Item.create({title: "Gigabyte Geforce GTX 1050 2GB GDDR5 128 Bit PCI-E Graphic Card (GV-N1050OC-2GD)" , description: "New NVIDIA pascal architecture delivers improved performance and power efficiency", cost: 129.99, stock: 5, image_url: "https://images-na.ssl-images-amazon.com/images/I/81uhA6epooL._SL1500_.jpg"})
 User.create({name: "admin", password: "admin", admin: true, username: "admin"});
-User.create({name: "Jonathan", password: "jon", admin: false, username: "jonh"});
+User.create({name: "Jonathan", password: "jon", admin: false, username: "jonh", balance: 23432534});
