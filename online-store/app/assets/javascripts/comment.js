@@ -9,3 +9,14 @@ class Comment {
         this.content = commentJson.content;
     }
 }
+const bindCommentsClick = () => {
+    
+}
+Comment.prototype.formatIndex = function(){
+    let commentHTML = `
+    <div class="comment-container data-id="${this.id}">
+        ${this.content}
+    </div>
+  `;
+  return commentHTML;
+}
