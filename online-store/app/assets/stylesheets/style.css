@@ -190,7 +190,12 @@ li a {
     left: 0px;
     background: rgba(0, 0, 0, 0.3); /*can be anything, of course*/
 }
-  
+.comments-container {
+    background-color: rgba(17, 16, 16, 0.616);
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 2px;
+}
 .field_with_errors>.input {
 
     border-color: red;
