@@ -18,6 +18,10 @@ class CommentsController < ApplicationController
     def index
         @comments = Comment.where(item_id: params[:item_id])
         @item = Item.find_by(id: params[:item_id])
+        respond_to do |format|
+            format.html { render :index }
+            format.json { render json: @comments}
+        end
     end
 
 end
