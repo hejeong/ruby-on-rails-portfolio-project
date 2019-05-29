@@ -18,6 +18,6 @@
     <br>
     <br>
     <%= link_to 'Create a comment', new_item_comment_path(@item) %> |
-    <%= link_to 'View comments', item_comments_path(@item) %>
+    <%= link_to 'View comments', item_comments_path(@item), class: 'comment-link' %>
 <% end %>
 </div>

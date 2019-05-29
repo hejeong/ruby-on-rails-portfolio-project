@@ -90,7 +90,7 @@ Item.prototype.formatShow = function(){
         <input type="submit" name="commit" value="Purchase" class="button" data-disable-with="Purchase">
         </form><br><br>
         <a href="/items/${this.id}/comments/new">Create a comment</a> |
-        <a href="/items/${this.id}/comments">View comments</a></div>`
+        <a href="/items/${this.id}/comments" class="comment-link">View comments</a></div>`
     }else {
         showHTML += `<a class="link back" href="/items">Back</a>
         <a class="edit" href="/items/${this.id}/edit">Edit this item</a>
