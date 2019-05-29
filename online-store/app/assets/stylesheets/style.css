@@ -72,6 +72,7 @@ body {
     width: 100%;
     background-color: rgba(20, 19, 32, 0.664);
     padding: 30px;
+    padding-top: 2px;
 }
 
 .top-div{
@@ -79,9 +80,19 @@ body {
    
 }
 
+.bottom-div{
+    padding: 20px;
+    padding-top: 1px;
+    background: rgba(161, 173, 212, 0.431);
+}
+
 .home-top-div{
     padding: 20px;
     padding-bottom: 0px;
+}
+.username {
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 .image{
     position: relative;

@@ -10,7 +10,10 @@
 </div>
 <br>
 <div class="feature-div">
-    <h3 class="feature-title"><%= @popular_item.title %></h3>
-    <img class="feature" src="<%= @popular_item.image_url %>"></img >
+    <h2>Today's Featured Item:</h2>
+    <a href="/items/<%= @popular_item.id %>">
+        <h3 class="feature-title"><%= @popular_item.title %></h3>
+        <img class="feature" src="<%= @popular_item.image_url %>"></img >
+    </a>
 </div>
 
