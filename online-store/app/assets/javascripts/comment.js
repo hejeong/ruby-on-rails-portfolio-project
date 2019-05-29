@@ -12,8 +12,21 @@ class Comment {
 const bindCommentsClick = () => {
     $(document).on('click', ".comment-link", function(event){
         event.preventDefault();
-        const id = event.target.getAttribute("data-id");
-        getComment(id);
+        const url = event.target.getAttribute("href");
+        getComment(url + ".json");
+    })
+}
+
+const getComment = (url) =>{
+    fetch(url)
+    .then(res => res.json())
+    .then(comment => {
+        let targetHTML = "<h3>User Reviews:</h3>";
+        comment.forEach(newComment => {
+            const target = new Comment(newComment);
+            targetHTML += target.formatComment();
+        })
+        $(".top-div").append(targetHTML);
     })
 }
 Comment.prototype.formatComment = function(){
