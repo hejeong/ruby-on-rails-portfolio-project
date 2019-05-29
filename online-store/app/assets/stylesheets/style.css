@@ -38,7 +38,6 @@ body {
   border-radius: 5px;
   background: rgba(9, 21, 44, 0.644);
   width: 66%;
-  padding: 20px;
   margin: auto;
   margin-top: 30px;
   color: white;
@@ -60,10 +59,30 @@ body {
     text-align: center;
 }
 .feature {
-    width: 30%;
+    width: 50%;
     height: 30%;
+    margin-left: 300px;
+}
+.feature-title{
+    margin-left: 300px;
+
 }
 
+.feature-div{
+    width: 100%;
+    background-color: rgba(20, 19, 32, 0.664);
+    padding: 30px;
+}
+
+.top-div{
+    padding: 20px;
+   
+}
+
+.home-top-div{
+    padding: 20px;
+    padding-bottom: 0px;
+}
 .image{
     position: relative;
     float: left;

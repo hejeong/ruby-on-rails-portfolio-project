@@ -1,9 +1,16 @@
-<% if current_user %>
+<div class="home-top-div">
+    <% if current_user %>
     <h1 data-id="<%= current_user.id %>">Welcome, <%= current_user.name %>!</h1>   
     <%= link_to 'Logout', logout_path, method: :post%>
-<% else %>
+    <% else %>
     <h1>Welcome!</h1>
     <%= link_to 'Sign Up', signup_path, class: 'link back' %> Or <%= link_to 'Log in', login_path, class: :button %>
     <%= link_to('Log in with Facebook!', '/auth/facebook') %>
-<% end %>
-<br><br><br>
+    <% end %>
+</div>
+<br>
+<div class="feature-div">
+    <h3 class="feature-title"><%= @popular_item.title %></h3>
+    <img class="feature" src="<%= @popular_item.image_url %>"></img >
+</div>
+
