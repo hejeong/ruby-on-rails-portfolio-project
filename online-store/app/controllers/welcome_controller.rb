@@ -1,8 +1,12 @@
 class WelcomeController < ApplicationController
   def home
     hash = Transaction.group(:item_id).sum(:quantity)
-    array_pair = find_popular_item(hash)
-    @popular_item = Item.find(array_pair.first)
+    if hash.empty?
+      @popular_item = nil;
+    else 
+      array_pair = find_popular_item(hash)
+      @popular_item = Item.find(array_pair.first)
+    end
   end
 
   private

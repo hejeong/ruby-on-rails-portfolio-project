@@ -12,3 +12,5 @@ Item.create({title: "Microphone Shock Mount with Pop Filter, Mic Anti-Vibration 
 Item.create({title: "AmazonBasics XLR Male to Female Microphone Cable - 6 Feet" , description: "High-quality XLR male and female connectors; 3-pin XLR male to XLR female", cost: 6.99, stock: 300, image_url: "https://images-na.ssl-images-amazon.com/images/I/81ylAAz6O6L._SL1500_.jpg"})
 Item.create({title: "Roundhill Furniture AC151GY Tuchico Contemporary Fabric Accent Chair, Gray" , description: "Deep tuck-pleating design and extra thick padding is supremely comfortable.", cost: 84.38, stock: 53, image_url: "https://images-na.ssl-images-amazon.com/images/I/A1RuRxFXReL._SL1500_.jpg"})
 Item.create({title: "Gigabyte Geforce GTX 1050 2GB GDDR5 128 Bit PCI-E Graphic Card (GV-N1050OC-2GD)" , description: "New NVIDIA pascal architecture delivers improved performance and power efficiency", cost: 129.99, stock: 5, image_url: "https://images-na.ssl-images-amazon.com/images/I/81uhA6epooL._SL1500_.jpg"})
+User.create({name: "admin", password: "admin", admin: true, username: "admin"});
+User.create({name: "Jonathan", password: "jon", admin: false, username: "jonh"});

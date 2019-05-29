@@ -9,6 +9,7 @@
     <% end %>
 </div>
 <br>
+<% if !!@popular_item %>
 <div class="feature-div">
     <h2>Today's Featured Item:</h2>
     <a href="/items/<%= @popular_item.id %>">
@@ -16,4 +17,4 @@
         <img class="feature" src="<%= @popular_item.image_url %>"></img >
     </a>
 </div>
-
+<% end %>
